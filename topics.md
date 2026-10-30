@@ -1,58 +1,87 @@
 
 # Siynrr — Knowledge Topics Map
 
-> A topic-oriented guide to the knowledge areas explored on Siynrr by Sameh Nassar.
+> A structured map of the subjects explored by Sameh Nassar on Siynrr.
 
-## 1. Web Development
+## About This Knowledge Map
 
-Exploring the creation, development, and improvement of personal websites and digital experiences.
+This map distinguishes between topics supported by published articles and broader areas of interest.
 
-Related articles:
-- [Building My Personal Website](https://www.siynrr.me/2026/10/building-my-personal-website.html)
+Only topics with actual published supporting content are classified as documented knowledge.
 
-## 2. Digital Projects
+## 1. Personal Website Development
 
-Practical digital experiments, personal projects, implementation decisions, and turning ideas into working solutions.
+Status: Published content available.
 
-Related articles:
-- [Building My Personal Website](https://www.siynrr.me/2026/10/building-my-personal-website.html)
+Focus:
+- Building a personal website.
+- Website identity and positioning.
+- Digital presence and content decisions.
+- Practical use of AI in personal projects.
+
+Related article:
+- Building My Personal Website Was Easy. Figuring Out What to Put on It Wasn't.
+  https://www.siynrr.me/2026/10/building-my-personal-website.html
+
+## 2. Personal Branding and Identity
+
+Status: Published content available.
+
+Focus:
+- Personal identity and reputation.
+- Professional image and perception.
+- Authenticity and consistency.
+- Communicating personal value.
+
+Related article:
+- Personal Brand: Your Personality Starts Here, Simply
+  https://www.siynrr.me/2026/09/personal-brand.html
 
 ## 3. Artificial Intelligence
 
-Exploring AI technologies, their practical applications, and their role in research, problem-solving, and digital workflows.
+Status: Broader area of interest.
 
-Article coverage: Discover relevant publications through the RSS feed.
+Focus:
+- Practical AI applications.
+- AI-assisted research.
+- Digital workflows and problem-solving.
+
+Published supporting articles: Not yet independently established in this index.
 
 ## 4. Data Analysis
 
-Understanding information, analyzing data, identifying patterns, and transforming findings into useful insights.
+Status: Broader area of interest.
 
-Article coverage: Discover relevant publications through the RSS feed.
+Focus:
+- Understanding information.
+- Identifying patterns.
+- Transforming data into useful insights.
+
+Published supporting articles: Not yet independently established in this index.
 
 ## 5. Analytical Problem Solving
 
-Breaking down complex problems, evaluating available information, exploring possible solutions, and testing practical approaches.
+Status: Broader area of interest.
 
-Article coverage: Discover relevant publications through the RSS feed.
+Focus:
+- Breaking down complex problems.
+- Evaluating evidence.
+- Testing practical solutions.
 
-## 6. Practical Technology
-
-Exploring useful technologies, digital tools, technical decisions, and solutions to real-world challenges.
-
-Article coverage: Discover relevant publications through the RSS feed.
+Published supporting articles: Not yet independently established in this index.
 
 ## Discovery Sources
 
 - Website: https://www.siynrr.me/
-- Full RSS Feed: https://www.siynrr.me/feeds/posts/default?alt=rss
-- Atom Feed: https://www.siynrr.me/feeds/posts/default
+- Latest Articles: https://siynrr.github.io/Siynrr-ai/latest-articles.md
+- Curated Articles: https://siynrr.github.io/Siynrr-ai/articles.md
+- RSS Feed: https://www.siynrr.me/feeds/posts/default?alt=rss
 - Sitemap: https://www.siynrr.me/sitemap.xml
-- Article Index: https://siynrr.github.io/Siynrr-ai/articles.md
 
-## Classification Guidelines
+## Editorial Guidelines
 
-- Assign topics based on the actual content of each article.
-- An article may belong to multiple knowledge areas.
-- Do not assume that a topic is covered by an article merely because it appears in this map.
-- Prefer original articles as the authoritative source.
+- Classify articles according to their actual content.
+- Never invent supporting publications.
+- An article may belong to multiple topics.
+- Prefer original articles as authoritative sources.
 - Update this map when new relevant articles are published.
