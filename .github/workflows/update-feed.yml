@@ -1,0 +1,94 @@
+
+name: Update Siynrr Article Index
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-articles:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install feed parser
+        run: pip install feedparser
+
+      - name: Fetch Blogger RSS and generate index
+        run: |
+          python - <<'PY'
+          import feedparser
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          FEED_URL = "https://www.siynrr.me/feeds/posts/default?alt=rss"
+          feed = feedparser.parse(FEED_URL)
+
+          if feed.bozo and not feed.entries:
+              raise RuntimeError("Could not read the Blogger RSS feed.")
+
+          lines = [
+              "# Siynrr — Latest Articles",
+              "",
+              "> Automatically generated from the official Siynrr RSS feed.",
+              "",
+              f"Last updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
+              "",
+              f"Articles discovered: {len(feed.entries[:30])}",
+              "",
+          ]
+
+          for entry in feed.entries[:30]:
+              title = entry.get("title", "Untitled").replace("[", "\\[").replace("]", "\\]")
+              url = entry.get("link", "")
+              published = entry.get("published", "Date unavailable")
+              summary = entry.get("summary", "")
+              summary = " ".join(summary.split())[:300]
+
+              lines.extend([
+                  f"## {title}",
+                  "",
+                  f"- URL: {url}",
+                  f"- Published: {published}",
+              ])
+
+              if summary:
+                  lines.append(f"- Summary: {summary}")
+
+              lines.append("")
+
+          lines.extend([
+              "## Original Sources",
+              "",
+              "- Website: https://www.siynrr.me/",
+              "- RSS: https://www.siynrr.me/feeds/posts/default?alt=rss",
+              "- Sitemap: https://www.siynrr.me/sitemap.xml",
+              "",
+          ])
+
+          Path("latest-articles.md").write_text(
+              "\n".join(lines),
+              encoding="utf-8"
+          )
+
+          print(f"Generated index with {len(feed.entries[:30])} articles.")
+          PY
+
+      - name: Commit updated index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add latest-articles.md
+          git diff --cached --quiet || git commit -m "Update latest articles from RSS"
+          git push
