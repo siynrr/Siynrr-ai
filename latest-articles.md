@@ -2,7 +2,7 @@
 
 > Automatically generated from the official Siynrr RSS feed.
 
-Last updated: 2026-10-30 17:38 UTC
+Last updated: 2026-10-30 17:52 UTC
 
 Articles discovered: 2
 
@@ -10,13 +10,13 @@ Articles discovered: 2
 
 - URL: https://www.siynrr.me/2026/10/building-my-personal-website.html
 - Published: Thu, 29 Oct 2026 21:11:37 +0000
-- Summary: <div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjYXbL-CjWhUWR9Eq-RZkhIuncLjnm2DWKybfmSaBslsi8iqj8y29DkYq7DKJUuKj89yoWbTsM5j-_CaM6Dhm1omj17phUlZBE0k_vpqVUudseqWQ2rTz3qWsc9ptNpLM1NQmpFaFb8pi9ex-i6j-4xoAMKjHGfyrhidkq9RI
+- Summary: Why I built a personal website to present my work and ideas, how AI helped me bring it to life, and what the process taught me about professional identity and figuring out my direction. I built my personal website for a simple reason: I wanted to present myself differently. When applying for a job, sending a PDF CV often feels like sending a small snapshot of yourself and hoping someone takes the time to look beyond it. A CV can communicate experience, skills, and education, but it has limited s
 
 ## Personal Brand: Your Personality Starts Here, Simply
 
 - URL: https://www.siynrr.me/2026/09/personal-brand.html
 - Published: Thu, 17 Sep 2026 07:07:22 +0000
-- Summary: <table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto;"><tbody><tr><td style="text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjEj-ALBtrpKq9ACBn9fVoiyU1RgPUqBXN6qKEnXc9SmjC24DN-yGmWii5am
+- Summary: Your Personality Starts Here, Simply When I look at Cobriums, I do not see a single obvious niche. I see articles and practical work around AI, technology, data, digital tools, research, and problem solving. Some subjects are closely related. Others are not. Yet the fact that they all exist under the same name makes me ask a more useful question: What do people learn about the person behind the work, even when the subject changes? I can rewrite my bio in 20 minutes. I can choose a cleaner title,
 
 ## Original Sources
 
