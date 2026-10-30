@@ -25,18 +25,50 @@ jobs:
       - name: Install feed parser
         run: pip install feedparser
 
-      - name: Fetch Blogger RSS and generate index
+      - name: Fetch and clean Blogger RSS
         run: |
           python - <<'PY'
           import feedparser
           from pathlib import Path
           from datetime import datetime, timezone
+          from html.parser import HTMLParser
+          import re
+
+          class CleanHTML(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.parts = []
+                  self.skip = 0
+
+              def handle_starttag(self, tag, attrs):
+                  if tag in ("script", "style"):
+                      self.skip += 1
+                  elif tag in ("p", "div", "br", "li", "tr"):
+                      self.parts.append(" ")
+
+              def handle_endtag(self, tag):
+                  if tag in ("script", "style") and self.skip:
+                      self.skip -= 1
+                  elif tag in ("p", "div", "li", "tr"):
+                      self.parts.append(" ")
+
+              def handle_data(self, data):
+                  if not self.skip:
+                      self.parts.append(data)
+
+          def clean_html(value):
+              parser = CleanHTML()
+              parser.feed(value or "")
+              text = " ".join(parser.parts)
+              return re.sub(r"\s+", " ", text).strip()
 
           FEED_URL = "https://www.siynrr.me/feeds/posts/default?alt=rss"
           feed = feedparser.parse(FEED_URL)
 
-          if feed.bozo and not feed.entries:
-              raise RuntimeError("Could not read the Blogger RSS feed.")
+          if not feed.entries:
+              raise RuntimeError("RSS returned no articles. Existing index preserved.")
+
+          entries = feed.entries[:30]
 
           lines = [
               "# Siynrr — Latest Articles",
@@ -45,16 +77,15 @@ jobs:
               "",
               f"Last updated: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M UTC')}",
               "",
-              f"Articles discovered: {len(feed.entries[:30])}",
+              f"Articles discovered: {len(entries)}",
               "",
           ]
 
-          for entry in feed.entries[:30]:
-              title = entry.get("title", "Untitled").replace("[", "\\[").replace("]", "\\]")
+          for entry in entries:
+              title = clean_html(entry.get("title", "Untitled"))
               url = entry.get("link", "")
-              published = entry.get("published", "Date unavailable")
-              summary = entry.get("summary", "")
-              summary = " ".join(summary.split())[:300]
+              published = clean_html(entry.get("published", "Date unavailable"))
+              summary = clean_html(entry.get("summary", ""))
 
               lines.extend([
                   f"## {title}",
@@ -64,7 +95,7 @@ jobs:
               ])
 
               if summary:
-                  lines.append(f"- Summary: {summary}")
+                  lines.append(f"- Summary: {summary[:500]}")
 
               lines.append("")
 
@@ -82,7 +113,7 @@ jobs:
               encoding="utf-8"
           )
 
-          print(f"Generated index with {len(feed.entries[:30])} articles.")
+          print(f"Successfully generated {len(entries)} article entries.")
           PY
 
       - name: Commit updated index
