@@ -2,9 +2,15 @@
 
 > Automatically generated from the official Siynrr RSS feed.
 
-Last updated: 2026-11-18 14:43 UTC
+Last updated: 2026-11-19 14:49 UTC
 
-Articles discovered: 2
+Articles discovered: 3
+
+## Before Adding AI, Decide What the Workflow Is For
+
+- URL: https://www.siynrr.me/2026/11/before-adding-ai-decide-what-workflow.html
+- Published: Wed, 18 Nov 2026 21:02:01 +0000
+- Summary: A request to "add AI" sounds like a technical problem. Before choosing a tool, I would ask a less exciting question: what decision should this workflow help someone make? If that question is unclear, a faster answer may simply move the confusion further down the process. Here is a small worked example. The business, records and choices below are hypothetical. This is a way to examine a workflow, not a client case study or a claim of measured results. Start with a decision someone actually owns I
 
 ## Building My Personal Website Was Easy. Figuring Out What to Put on It Wasn't.
 
