@@ -2,9 +2,15 @@
 
 > Automatically generated from the official Siynrr RSS feed.
 
-Last updated: 2026-11-19 14:49 UTC
+Last updated: 2026-11-20 14:31 UTC
 
-Articles discovered: 3
+Articles discovered: 4
+
+## A Working AI Demo Is Not an Acceptance Test
+
+- URL: https://www.siynrr.me/2026/11/a-working-ai-demo-is-not-acceptance-test.html
+- Published: Thu, 19 Nov 2026 17:21:08 +0000
+- Summary: A demo can produce a convincing answer and still leave the important question unanswered: what would make this workflow safe to use? I would write the acceptance criteria before choosing the automation. Otherwise, it is too easy to judge the system by the examples it handles well. By acceptance criteria, I mean observable conditions for accepting a result. Not "the AI should be accurate." A person needs to be able to look at a case and decide whether the output passed, failed or needs review. St
 
 ## Before Adding AI, Decide What the Workflow Is For
 
